@@ -8,8 +8,13 @@ import Search from '@/views/Search/Search'
 import Order from '@/views/Order/Order'
 import Profile from '@/views/Profile/Profile'
 import Login from '@/views/Login/Login'
-Vue.use(VueRouter)
 
+// 解决ElementUI导航栏中的vue-router在3.0版本以上重复点菜单报错问题
+const originalPush = VueRouter.prototype.replace
+VueRouter.prototype.replace = function replace (location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+Vue.use(VueRouter)
 const router = new VueRouter({
   routes: [
     {

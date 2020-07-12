@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+</head>
+
+<body>
+<script>
+var poly1 = turf.polygon([[[0,0],[0,5],[5,5],[5,0],[0,0]]]);
+var poly2 = turf.polygon([[[1,1],[1,6],[6,6],[6,1],[1,1]]]);
+var poly3 = turf.polygon([[[10,10],[10,15],[15,15],[15,10],[10,10]]]);
+var bbox = [0, 0, 10, 10];
+
+var poly = turf.bboxPolygon(bbox);
+var result = turf.booleanOverlap(poly1, poly)
+console.log(result)
+turf.booleanOverlap(poly2, poly3)
+
+</script>
+</body>
+
+</html>

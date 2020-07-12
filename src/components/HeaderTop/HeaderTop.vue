@@ -21,7 +21,7 @@ export default {
     left 0
     right 0
     background-color #02a774
-    height 50px
+    height 45px
     width 100%
     display flex
     span
